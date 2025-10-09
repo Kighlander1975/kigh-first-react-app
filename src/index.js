@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './App/index.css';
+import './index.css';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 
@@ -10,17 +10,16 @@ function Artikel(props) {
   return <div><h2>{props.name}</h2><p>Atrikeltext</p></div>
 };
 
+const Heading = <h1>Hallo Welt</h1>;
+
+
 function formatName(n1, n2) {
-    return n1 + " " + n2;
+    return n1 + " " + n2
 }
 
 root.render(
   <React.StrictMode>
-    <h1>Hallo</h1>
-    <p>Test</p>
-    <Artikel name="Wasser"/>
-    <img src='https://lh3.googleusercontent.com/a/ACg8ocLYNylkO45Os1yFqKQaOjal86iyIXTpjTRBGV4mcpx4yvR0DlM2=s96-c' alt=""/>
-    <p>Name: {formatName("Kai","Akkermann")}</p>
+    <App />
   </React.StrictMode>
 );
 
