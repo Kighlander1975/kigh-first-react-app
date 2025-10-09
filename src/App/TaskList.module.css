@@ -15,3 +15,57 @@
     background-color: #fff3e0;
     color: #000;
 }
+
+.taskHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.taskTitle {
+    flex: 1;
+    user-select: none;
+}
+
+.checkbox {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.checkbox:disabled {
+    cursor: not-allowed;
+}
+
+/* Beschreibung - MIT FADE EFFEKT */
+.description {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+    
+    /* Grid-Trick für smooth transition */
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease, 
+                opacity 0.3s ease,
+                margin-top 0.3s ease;
+}
+
+.description > * {
+    overflow: hidden;
+}
+
+.description.visible {
+    opacity: 1;
+    grid-template-rows: 1fr;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.description.hidden {
+    opacity: 0;
+    grid-template-rows: 0fr;
+    margin-top: 0;
+    padding: 0 10px;
+}
